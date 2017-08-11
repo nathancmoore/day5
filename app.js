@@ -9,9 +9,7 @@ For TODO item, be sure to change it to say DONE when you have successfully compl
 
 // TODO: Write your code here
 function sum(a,b){ //eslint-disable-line
-  var result = a + b;
-  var output = 'The sum of ' + a + ' and ' + b + ' is ' + result + '.';
-  return [result, output];
+  return [a + b, 'The sum of ' + a + ' and ' + b + ' is ' + (a + b) + '.'];
 }
 
 // TODO: Here is the test for sum(); uncomment it to run it
@@ -27,9 +25,7 @@ Test this function by hand in the console to get it working, and when you think 
 
 // TODO: Write your code here
 function multiply(a,b){ //eslint-disable-line
-  var result = a * b;
-  var output = 'The product of ' + a + ' and ' + b + ' is ' + result + '.';
-  return [result, output];
+  return [a * b, 'The product of ' + a + ' and ' + b + ' is ' + (a * b) + '.'];
 }
 
 // TODO: Here is the test for multiply(); uncomment it to run it
@@ -47,11 +43,7 @@ Test this function by hand in the console to get it working, and when you think 
 
 // TODO: Write your code here
 function sumAndMultiply(a,b,c){ //eslint-disable-line
-  var sum2 = sum(a,b)[1];
-  var sum3 = sum(sum2,c)[1];
-  var product2 = multiply(a,b)[1];
-  var product3 = multiply(product2,c)[1];
-  return [sum3, product3, a + ' and ' + b + ' and ' + c + ' sum to 16.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is 140.'];
+  return [sum(sum(a,b)[0],c)[0], multiply(multiply(a,b)[0],c)[0], a + ' and ' + b + ' and ' + c + ' sum to 16.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is 140.'];
 }
 
 // TODO: Here is the test for sumAndMultiply(); uncomment it to run it
@@ -71,7 +63,7 @@ var testArray = [2,3,4]; //eslint-disable-line
 
 function sumArray(testArray){ //eslint-disable-line
   var currentSum = 0;
-  for(var i = 0; i < testArray.length; i++) {
+  for(var i = 0; i < testArray.length; i++){
     currentSum = sum(currentSum, testArray[i])[0];
   }
   return[currentSum, testArray.toString() + ' was passed in as an array of numbers, and 9 is their sum.'];
@@ -92,7 +84,7 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(testArray){ //eslint-disable-line
   var currentProduct = 1;
-  for(var i = 0; i < testArray.length; i++) {
+  for(var i = 0; i < testArray.length; i++){
     currentProduct = multiply(currentProduct, testArray[i])[0];
   }
   return[currentProduct, 'The numbers ' + testArray.toString() + ' have a product of 24.'];
